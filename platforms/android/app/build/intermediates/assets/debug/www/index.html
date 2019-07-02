@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <script src="js/porto/vendor/jquery/jquery.min.js"></script>
+    <link  rel="stylesheet" href='css/spinkit/spinkit.css'>
+    <script type="text/javascript" src="js/source.js"></script>
+    <script src="trangchu/trangchu.js" type="text/javascript"></script>
+    <script src="trangchu/transition.js" type="text/javascript"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            GetDeviceType();
+            InitHeadAndScriptDefault();
+        })
+    </script>
+</head>
+
+<div id="header-menu"></div>
+<!-- Breadcum -->
+<div class="">
+    <section class="page-header"> 
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="breadcrumb">
+                        <li><a href="/"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- End breadcrum -->
+
+<div id="dulich-project-list-data">
+        <vue-page-transition name="fade-in-right">
+    <div class="block-heading-diemden">Điểm du lịch hấp dẫn</div>
+    <div class="block-diemden">
+        <div class="tindau" v-for="(project, index) in projectsDiemden" v-if="index==0">
+            <div class="hinhanh">
+                <a :href="'diemden/detail_diemden.html?id=' + project.id">
+                    <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                </a>
+                
+            </div>
+            <div class="tieude">
+                    <a :href="'diemden/detail_diemden.html?id=' + project.id">{{project.title}}</a>
+                </div>
+            <div class="summary" v-html="project.gioithieu">
+                {{project.gioithieu}}
+            </div>
+        </div>
+        <div class="list-tin" v-for="(project, index) in projectsDiemden.slice(0, 6)" v-if="index>0">
+            <div class="tin">
+                <div class="noidung">
+                    <div class="hinhanh">
+                        <a :href="'diemden/detail_diemden.html?id=' + project.id">
+                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                        </a>
+                    </div>
+                </div>
+                <div class="tieude">
+                    <a :href="'diemden/detail_diemden.html?id=' + project.id">{{project.title}}</a>
+                    <div class="sumary" v-html="project.gioithieu">{{project.gioithieu}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-heading-diemden">Tin tức và sự kiện</div>
+    <div class="block-tin">
+        <div class="tindau" v-for="(project, index) in projectsTintuc" v-if="index==0">
+            <div class="hinhanh">
+                <a :href="'tintuc/detail_tintuc.html?id=' + project.id">
+                    <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                </a>
+                
+            </div>
+            <div class="tieude">
+                    <a :href="'tintuc/detail_tintuc.html?id=' + project.id">{{project.title}}</a>
+                </div>
+            <div class="sumary">
+                {{project.ghichu}}
+            </div>
+        </div>
+        <div class="list-tin" v-for="(project, index) in projectsTintuc" v-if="index>0">
+            <div class="tin">
+                <div class="noidung">
+                    <div class="hinhanh">
+                        <a :href="'tintuc/detail_tintuc.html?id=' + project.id">
+                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                        </a>
+                    </div>
+                </div>
+                <div class="tieude">
+                    <a :href="'tintuc/detail_tintuc.html?id=' + project.id">{{project.title}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</vue-page-transition>
+</div>
+
+<div id="footer-dulich"></div>
+
+<script>
+    $(window).on('load', function() {
+        $('#header-menu').load('header.html');
+        $('#footer-dulich').load('footer.html');
+    })
+    function sleep(time) {
+        var d1 = new Date().getTime();
+        var d2 = new Date().getTime();
+        while (d2 < d1 + time) {
+            d2 = new Date().getTime();
+        }
+        return;
+    }
+    $(function () {
+        var ProjectListTintucDiemdenVue = new Vue ({
+            el: "#dulich-project-list-data",
+            data: {
+                projectsTintuc: null,
+                projectsDiemden: null,
+            },
+            beforeCompile() {
+                sleep(3000);
+            },
+            created: function() {
+                var _this = this;
+                ProjectListTintucDiemden.InitDataTintuc(_this);
+                ProjectListTintucDiemden.InitDataDiemden(_this);
+            }
+        });
+    })
+</script>
+</html>

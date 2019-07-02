@@ -1,0 +1,112 @@
+#map_global {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 600px;
+}
+
+
+
+.form-group {
+    margin-bottom: 2px;
+}
+
+.box-body {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.box {
+    margin-bottom: 3px;
+}
+
+.autocomplete-light-widget {
+    width: 100%;
+}
+
+.autocomplete-light-widget.yourlabs-autocomplete {
+    top: 22px !important;
+    border-radius: 0px;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+    padding: 2px;
+    padding-right: 2px
+}
+
+.pointer-cursor {
+    cursor: pointer;
+}
+
+#div_map_popup {
+    margin-bottom: 0px;
+}
+
+.leaflet-popup-content {
+    width: 300px !important;
+}
+
+iframe {
+    height: 500px;
+    width: 100%;
+    border: none;
+}
+
+.modal-body {
+    padding: 0px;
+}
+
+.modal-footer {
+    padding: 10px;
+}
+
+.box-body::-webkit-scrollbar {
+  width: 5px;
+}
+ 
+.box-body::-webkit-scrollbar-track {
+  background: #ddd;
+}
+ 
+.box-body::-webkit-scrollbar-thumb {
+  background: #666; 
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+ 
+body::-webkit-scrollbar-track {
+  background: #ddd;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background: #666; 
+}
+
+div::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+div::-webkit-scrollbar-thumb {
+    background: #666;
+}
+ul::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #666;
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="/www/js/source.js"></script>
+    <script src="/www/js/porto/vendor/jquery/jquery.min.js"></script>
+    <script src="/www/qrcode/qrcode.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        $(function(){
+            InitHeadAndScriptDefault();
+        })
+    </script>
+    <style>
+        [v-cloak] .v-cloak--hidden{
+            display: none;
+        }
+    </style>
+</head>
+<div id="header-menu"></div>
+<!-- Breadcum -->
+<div class="" style="margin-top: -70px;">
+    <section class="page-header"> 
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li><a href="/cam-nang-du-lich/">Cẩm nang du lịch</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- End breadcrum -->
+<input type='button' value='scann' onclick='scanApp.scan()' id='scanData'>
+<div id="footer-dulich"></div>
+<script>
+    $('#header-menu').load('/www/header.html');
+    $('#footer-dulich').load('/www/footer.html');
+</script>
+</html>

@@ -1,0 +1,69 @@
+/* Add here all your CSS customizations */
+.block-baiviet-ghichu {
+    text-align: justify;
+    max-height: 95px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.block-baiviet-title {
+    padding: 5px 0 0;
+    color: #555;
+    margin: 0 10px;
+    max-height: 46px;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.3em;
+}
+
+.login {
+    margin-left: 10px;
+}
+
+.login a {
+    color: white;
+}
+
+.item-diemden {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-bottom: 1px solid #e6e6e6;
+    height: 80%;
+    overflow: hidden;
+    position: relative;
+}
+
+.item-diemden .item-tieude {
+    font-size: 16px;
+    margin: 0;
+    color: #fff;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 7px;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    background: #0088CC;
+    border-top: 1px solid rgba(111,204,237,.7);
+}
+
+.block-baiviet .heading {
+    border-bottom: 1px solid #cbd3db;
+}
+
+.list-result {
+    margin-top: 20px;
+    background: white;
+}
+
+.list-result .title-url{
+    margin-top: -10px;
+    color: #4CAF50 !important;
+    font-style: normal;
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 20px;
+}
