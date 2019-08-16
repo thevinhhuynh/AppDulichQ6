@@ -2,26 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <script type="text/javascript" src="../js/source.js"></script>
     <script src="../js/porto/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/source.js"></script>
     <script src="list_diemden.js" type="text/javascript"></script>
-    
+    <style>
+        [v-cloak] {
+            display:none;
+        }
+    </style>
     <script type="text/javascript">
         $(function(){
-            GetDeviceType();
             InitHeadAndScriptDefault();
         })
     </script>
 </head>
 <div id="header-menu"></div>
 <!-- Breadcum -->
-<div class="" style="margin-top: -70px;">
+<div class="">
     <section class="page-header"> 
         <div class="container">
             <div class="row">
                 <div class="col">
                     <ul class="breadcrumb">
-                        <li><a href="/">Điểm đến hấp dẫn</a></li>
+                        <li><a href="/"></a></li>
                     </ul>
                 </div>
             </div>
@@ -29,12 +32,12 @@
     </section>
 </div>
 <!-- End breadcum -->
-<div id="dulich-project-list-data-diemden" style="margin-top: -35px;">
+<div id="dulich-project-list-data-diemden" style="margin-top: -35px;" v-cloak>
     <div class="block-diemden">
         <div class="tindau" v-for="(project, index) in projects" v-if="index==0">
             <div class="hinhanh">
                 <a :href="'detail_diemden.html?id=' + project.id">
-                    <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                    <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                 </a>
                 
             </div>
@@ -51,7 +54,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'detail_diemden.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
@@ -68,7 +71,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'detail_diemden.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
@@ -85,7 +88,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'detail_diemden.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
@@ -102,7 +105,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'detail_diemden.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
@@ -117,14 +120,18 @@
 <div id="footer-dulich"></div>
 <script>
     $(window).on('load', function() {
-        $('#header-menu').load('../header.html');
+        $('#header-menu').load('../header_sub.html');
         $('#footer-dulich').load('../footer.html');
     })
+    
     $(function () {
         var ProjectListDiemdenVue = new Vue ({
             el: "#dulich-project-list-data-diemden",
             data: {
                 projects: null,
+            },
+            beforeCompile() {
+                sleep(3000);
             },
             created: function() {
                 var _this = this;

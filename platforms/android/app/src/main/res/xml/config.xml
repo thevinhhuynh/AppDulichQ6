@@ -16,6 +16,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <access origin="https://dulichq6.hcmgis.vn/geojson/" />
+    <access origin="http://localhost:8000" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

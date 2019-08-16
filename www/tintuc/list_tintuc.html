@@ -12,7 +12,6 @@
     </style>
     <script type="text/javascript">
         $(function(){
-            GetDeviceType();
             InitHeadAndScriptDefault();
         })
     </script>
@@ -36,7 +35,7 @@
         <div class="tindau" v-for="(project, index) in projects" v-if="index==0">
             <div class="hinhanh">
                 <a :href="'detail_tintuc.html?id=' + project.id">
-                    <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                    <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                 </a>
                 
             </div>
@@ -52,7 +51,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'detail_tintuc.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>

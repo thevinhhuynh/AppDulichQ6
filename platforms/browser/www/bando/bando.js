@@ -45,6 +45,9 @@ function initLayerControl() {
     L.control.layers(baselayer).addTo(MAP.objMap)
 }
 
+function initDirection() {
+    
+}
 function initHCMGISROADMAP() {
     MAP.addWMSLayer('hcmgis_ROADMAP', 'https://maps.hcmgis.vn/geoserver/wms', {
        layers: 'hcm_map:hcm_map',

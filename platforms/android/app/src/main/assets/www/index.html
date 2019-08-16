@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <script src="js/porto/vendor/jquery/jquery.min.js"></script>
-    <link  rel="stylesheet" href='css/spinkit/spinkit.css'>
+    <script src="js/porto/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="js/source.js"></script>
     <script src="trangchu/trangchu.js" type="text/javascript"></script>
-    <script src="trangchu/transition.js" type="text/javascript"></script>
     <style>
         [v-cloak]{
             display: none;
@@ -14,7 +12,6 @@
     </style>
     <script type="text/javascript">
         $(function(){
-            GetDeviceType();
             InitHeadAndScriptDefault();
         })
     </script>
@@ -38,13 +35,12 @@
 <!-- End breadcrum -->
 
 <div id="dulich-project-list-data">
-        <vue-page-transition name="fade-in-right">
     <div class="block-heading-diemden">Điểm du lịch hấp dẫn</div>
     <div class="block-diemden">
         <div class="tindau" v-for="(project, index) in projectsDiemden" v-if="index==0">
             <div class="hinhanh">
                 <a :href="'diemden/detail_diemden.html?id=' + project.id">
-                    <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                    <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                 </a>
                 
             </div>
@@ -60,7 +56,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'diemden/detail_diemden.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
@@ -76,7 +72,7 @@
         <div class="tindau" v-for="(project, index) in projectsTintuc" v-if="index==0">
             <div class="hinhanh">
                 <a :href="'tintuc/detail_tintuc.html?id=' + project.id">
-                    <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                    <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                 </a>
                 
             </div>
@@ -92,7 +88,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'tintuc/detail_tintuc.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
@@ -102,9 +98,7 @@
             </div>
         </div>
     </div>
-</vue-page-transition>
 </div>
-
 <div id="footer-dulich"></div>
 
 <script>

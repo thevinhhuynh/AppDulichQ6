@@ -1,16 +1,17 @@
-class ProjectListTintuc{
+class ProjectListTintucDiemden{
     static Init() {
-        this.InitData();
+        this.InitDataTintuc();
+        this.InitDataDiemden();
     }
 
-    static InitData(_vueInstance) {
+    static InitDataTintuc(_vueInstance) {
         var urlProject = APP.Server.local + '/appdata/data-list-tintuc/';
         $.ajax({
             url: urlProject,
             type: "GET",
             contentType: "json",
             success: function (resp) {
-                _vueInstance.projects = resp;
+                _vueInstance.projectsTintuc = resp;
             },
             error: function(xhr, status, errors) {
                 console.log(errors);
@@ -18,21 +19,14 @@ class ProjectListTintuc{
         });
         return false;
     };
-}
-
-class ProjectListDiemden{
-    static Init() {
-        this.InitData();
-    }
-
-    static InitData(_vueInstance) {
+    static InitDataDiemden(_vueInstance) {
         var urlProject = APP.Server.local + '/appdata/data-list-diemden/';
         $.ajax({
             url: urlProject,
             type: "GET",
             contentType: "json",
             success: function (resp) {
-                _vueInstance.projects = resp;
+                _vueInstance.projectsDiemden = resp;
             },
             error: function(xhr, status, errors) {
                 console.log(errors);

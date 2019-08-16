@@ -7341,54 +7341,6 @@ p .word-rotator {
 	margin-bottom: -6px;
 }
 
-/* Scroll to Top */
-html .scroll-to-top {
-	-webkit-transition: opacity 0.3s;
-	-moz-transition: opacity 0.3s;
-	transition: opacity 0.3s;
-	background: #404040;
-	border-radius: 7px 7px 0 0;
-	bottom: 0;
-	color: #FFF;
-	display: block;
-	height: 9px;
-	opacity: 0;
-	padding: 13px 10px 35px;
-	position: fixed;
-	right: 10px;
-	text-align: center;
-	text-decoration: none;
-	min-width: 49px;
-	z-index: 1040;
-}
-
-html .scroll-to-top:hover {
-	opacity: 1;
-}
-
-html .scroll-to-top.visible {
-	opacity: 0.75;
-}
-
-html .scroll-to-top span {
-	display: inline-block;
-	padding: 0 5px;
-}
-
-html.lightbox-opened .scroll-to-top {
-	right: 27px;
-}
-
-html.ie11 .scroll-to-top {
-	right: 25px;
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-	html .scroll-to-top.hidden-mobile {
-		display: none !important;
-	}
-}
 
 .flag {
 	width: 16px;

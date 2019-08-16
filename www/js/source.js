@@ -1,7 +1,7 @@
 var APP = {
     Server: {
-        local: 'http://dulichq6.hcmgis.vn',
-        // dulich: 'http://dulichq6.hcmgis.vn'
+        local: 'https://dulichq6.hcmgis.vn',
+        // dulich: 'https://dulichq6.hcmgis.vn'
 	},
 	ListApplication: {
         'Android': 'file:///android_asset/www/',
@@ -9,8 +9,11 @@ var APP = {
 	},
 	HeadMeta: [
 		`<meta http-equiv="Content-Security-Policy"
-		content="default-src 'self' http://dulichq6.hcmgis.vn data: gap: https://ssl.gstatic.com 'unsafe-eval'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' maxcdn.bootstrapcdn.com ; script-src 'self' https://maps.googleapis.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' s7.addthis.com ;media-src *; img-src * 'self' data: content:; font-src 'self' https://fonts.gstatic.com"; script-src 'self' https://unpkg.com 'unsafe-eval' 'unsafe-inline'; font-src 'self' https://unpkg.com"; script-src 'self' https://nominatim.openstreetmap.org/ 'unsafe-eval' 'unsafe-inline'; font-src 'self' https://nominatim.openstreetmap.org/"; script-src 'self' https://router.project-osrm.org/ 'unsafe-eval' 'unsafe-inline'; font-src 'self' https://router.project-osrm.org/";>`,
-		`<meta http-equiv="Content-Security-Policy" content="default-src *; style-src http://dulichq6.hcmgis.vn * 'unsafe-inline'; style-src http://localhost:88 * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src http://dulichq6.hcmgis.vn * filesystem: data:; img-src http://localhost:88 * filesystem: data:">`,
+			content="default-src 'self' https://dulichq6.hcmgis.vn data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+			script-src 'self' 'unsafe-eval' 'unsafe-inline' https://unpkg.com https://maps.googleapis.com https://nominatim.openstreetmap.org/ https://router.project-osrm.org/; 
+			style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com s7.addthis.com; 
+			img-src * 'self' data: content:; 
+			font-src 'self' https://fonts.gstatic.com https://unpkg.com https://nominatim.openstreetmap.org/ https://router.project-osrm.org/";>`,
 		`<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">`,
 		`<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">`,
 	],
@@ -31,8 +34,7 @@ var APP = {
 		`css/dulich.css`,
     ],
     Script: [
-		`css/porto/vendor/modernizr/modernizr.min.js`,
-        `js/vue/vue.js`,
+		`js/vue/vue.js`,
 		`js/porto/vendor/jquery.appear/jquery.appear.min.js`,
 		`js/porto/vendor/jquery.easing/jquery.easing.min.js`,
 		`js/porto/vendor/jquery-cookie/jquery-cookie.min.js`,
@@ -68,15 +70,7 @@ var APP = {
     applicationDirectory: '/'
 }
 
-function GetDeviceType() {
-    APP.storage.setItem('applicationDirectory', '/');
-	var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
-	console.log(deviceType);
-    if(APP.ListApplication.hasOwnProperty(deviceType)) {
-        APP.storage.setItem('applicationDirectory', APP.ListApplication[deviceType]);
-	}
-	console.log(APP.storage.getItem('applicationDirectory'));
-}
+
 
 function InitHeadAndScriptDefault() {
 

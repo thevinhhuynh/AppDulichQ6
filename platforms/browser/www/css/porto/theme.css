@@ -129,7 +129,7 @@ li {
 	position: relative;
 	background-color: #f4f4f4;
 	border-bottom: 1px solid #ededed;
-	height: 30px;
+	height: 15px;
 	z-index: 4;
 }
 
@@ -1913,8 +1913,8 @@ html[dir="rtl"] #header .header-search .btn-light {
 .page-header {
 	background-color: #0088CC;
 	margin: 0 0 35px 0;
-	height: 30px;
-	padding: 20px 0;
+	height: 15px;
+	padding: 7px 0;
 	position: relative;
 	text-align: left;
 }

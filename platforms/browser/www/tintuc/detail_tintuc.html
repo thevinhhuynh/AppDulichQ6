@@ -10,32 +10,36 @@
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-	<script type="text/javascript" src="/www/js/source.js"></script>
-	<script src="/www/js/porto/vendor/jquery/jquery.min.js"></script>
-	<script src="/www/tintuc/detail_tintuc.js" type="text/javascript"></script>
-	
+	<script type="text/javascript" src="../js/source.js"></script>
+	<script src="../js/porto/vendor/jquery/jquery.min.js"></script>
+	<script src="detail_tintuc.js" type="text/javascript"></script>
+	<style>
+        [v-cloak] {
+            display:none;
+        }
+    </style>
     <script type="text/javascript">
         $(function(){
+			GetDeviceType();
             InitHeadAndScriptDefault();
         })
     </script>
 </head>
 <div id="header-menu"></div>
-<div class="" style="margin-top: -70px;">
-	<section class="page-header"> 
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<ul class="breadcrumb">
-						<li><a href="/">Trang chủ</a></li>
-						<li><a href="/cam-nang-du-lich/">Cẩm nang du lịch</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+<div class="">
+    <section class="page-header"> 
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="breadcrumb">
+                        <li><a href="/"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-<div id="dulich-project-detail-data">
+<div id="dulich-project-detail-data" v-cloak>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -55,24 +59,30 @@
 	</div>
 </div>
 <div id="footer-dulich"></div>
-	<script>
-        $(function () {
-			InitHeadAndScriptDefault();
-			var projectId = GetURLParameter('id');
-            var ProjectDetailTintucVue = new Vue ({
-                el: "#dulich-project-detail-data",
-                data: {
-					projects: null,
-					projectId: projectId,
-                },
-                created: function() {
-                    var _this = this;
-                    ProjectDetailTintuc.InitData(_this);
-                }
-            });
-		})
-		$('#header-menu').load('/www/header.html');
-		$('#footer-dulich').load('/www/footer.html');
-    </script>
+<script>
+	$(window).on('load', function() {
+		$('#header-menu').load('../header_sub.html');
+		$('#footer-dulich').load('../footer.html');
+	})
+	
+	$(function () {
+		InitHeadAndScriptDefault();
+		var projectId = GetURLParameter('id');
+		var ProjectDetailTintucVue = new Vue ({
+			el: "#dulich-project-detail-data",
+			data: {
+				projects: null,
+				projectId: projectId,
+			},
+			beforeCompile() {
+                sleep(3000);
+            },
+			created: function() {
+				var _this = this;
+				ProjectDetailTintuc.InitData(_this);
+			}
+		});
+	})
+</script>
 </body>
 </html>

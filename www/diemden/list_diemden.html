@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <script type="text/javascript" src="../js/source.js"></script>
     <script src="../js/porto/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/source.js"></script>
     <script src="list_diemden.js" type="text/javascript"></script>
     <style>
         [v-cloak] {
@@ -12,7 +12,6 @@
     </style>
     <script type="text/javascript">
         $(function(){
-            GetDeviceType();
             InitHeadAndScriptDefault();
         })
     </script>
@@ -38,7 +37,7 @@
         <div class="tindau" v-for="(project, index) in projects" v-if="index==0">
             <div class="hinhanh">
                 <a :href="'detail_diemden.html?id=' + project.id">
-                    <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                    <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                 </a>
                 
             </div>
@@ -55,7 +54,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'detail_diemden.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
@@ -72,7 +71,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'detail_diemden.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'detail_diemden.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
@@ -106,7 +105,7 @@
                 <div class="noidung">
                     <div class="hinhanh">
                         <a :href="'detail_diemden.html?id=' + project.id">
-                            <img :src="'http://dulichq6.hcmgis.vn/media/' + project.file" />
+                            <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                         </a>
                     </div>
                 </div>
