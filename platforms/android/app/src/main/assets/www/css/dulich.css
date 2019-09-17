@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Roboto|Roboto+Condensed);
 
+body{
+    padding-top: max(12px, constant(safe-area-inset-top));
+    padding-top: max(12px, env(safe-area-inset-top));
+    background: #fff;
+}
+
 /* Tin tuc va su kien*/
 .block-tin {
     font-family: 'Roboto', sans-serif;

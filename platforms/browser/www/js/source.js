@@ -5,7 +5,9 @@ var APP = {
 	},
 	ListApplication: {
         'Android': 'file:///android_asset/www/',
-        'Browser': '/'
+		'Browser': '/',
+		'iPhone': '',
+		'iPad': '',
 	},
 	HeadMeta: [
 		`<meta http-equiv="Content-Security-Policy"
@@ -14,7 +16,7 @@ var APP = {
 			style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com s7.addthis.com; 
 			img-src * 'self' data: content:; 
 			font-src 'self' https://fonts.gstatic.com https://unpkg.com https://nominatim.openstreetmap.org/ https://router.project-osrm.org/";>`,
-		`<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">`,
+		`<meta name="viewport" content="width=device-width, height=device-height, viewport-fit=cover, initial-scale=1">`,
 		`<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">`,
 	],
     HeadStyle: [
@@ -73,7 +75,6 @@ var APP = {
 
 
 function InitHeadAndScriptDefault() {
-
 	var applicationDirectory = APP.storage.getItem('applicationDirectory');
 
     APP.HeadMeta.forEach(function (headmeta) {
@@ -83,9 +84,20 @@ function InitHeadAndScriptDefault() {
         $('head').append('<link rel="stylesheet" href="' + applicationDirectory + headstyle + '">')
     });
     APP.Script.forEach(function (script) {
-        $('body').append('<script type="text/javascript" src="' + applicationDirectory + script + '"></script>')
+        $('head').append('<script type="text/javascript" src="' + applicationDirectory + script + '"></script>')
     });
-    $('body').append('<script type="text/javascript" src="' + applicationDirectory + 'cordova.js"></script>');
+	$('head').append('<script type="text/javascript" src="' + applicationDirectory + 'cordova.js"></script>');
+}
+
+function GetDeviceType() {
+    APP.storage.setItem('applicationDirectory', '/');
+    var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+    if(APP.ListApplication.hasOwnProperty(deviceType)) {
+		if(deviceType === 'iPhone' || deviceType === 'iPad') {
+			APP.ListApplication[deviceType] = cordova.file.applicationDirectory + 'www/';
+		}
+		APP.storage.setItem('applicationDirectory', APP.ListApplication[deviceType]);
+    }
 }
 
 function GetURLParameter(sParam) {

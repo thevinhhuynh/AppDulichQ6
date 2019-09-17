@@ -7,7 +7,7 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
-    <content src="index.html" />
+    <content src="preloading.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <access origin="https://dulichq6.hcmgis.vn/geojson/" />
@@ -26,6 +26,9 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" /> 
     <plugin name="cordova-plugin-browsersync" spec="^1.1.0" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.1">
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
