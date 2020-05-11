@@ -7,14 +7,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-browsersync": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-browsersync@^1.1.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "phonegap-plugin-barcodescanner": {
     "source": {
       "type": "registry",
@@ -43,6 +35,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-statusbar@2.4.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-browsersync": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-browsersync@^1.1.0"
     },
     "is_top_level": true,
     "variables": {}

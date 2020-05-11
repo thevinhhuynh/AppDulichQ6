@@ -16,7 +16,7 @@ var APP = {
 			style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com s7.addthis.com; 
 			img-src * 'self' data: content:; 
 			font-src 'self' https://fonts.gstatic.com https://unpkg.com https://nominatim.openstreetmap.org/ https://router.project-osrm.org/";>`,
-		`<meta name="viewport" content="width=device-width, height=device-height, viewport-fit=cover, initial-scale=1">`,
+		`<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">`,
 		`<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">`,
 	],
     HeadStyle: [

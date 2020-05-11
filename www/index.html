@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <script src="js/porto/vendor/jquery/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/source.js"></script>
     <script src="trangchu/trangchu.js" type="text/javascript"></script>
     <script src="js/vue/vue.js"></script>
+    <link rel="stylesheet" href="www2/style.css">
     <style>
         [v-cloak]{
             display: none;
@@ -18,8 +19,39 @@
     </script>
 </head>
 <body>
-    <div id="header-menu"></div>
-    <!-- Breadcum -->
+    <div class="header-area" id="headerArea">
+        <div class="container h-100 d-flex align-items-center justify-content-center" style="position: relative;">
+          <!-- Logo Wrapper-->
+          <div class="logo-wrapper" style="position: absolute;max-width: 80px;left: 0.625rem;top: 50%;transform: translateY(-50%);"><a href="index.html"><img src="img/porto/logo_Dulich_Q6.png" alt="" style="max-width: 80px;"></a></div>
+          <!-- Search Form-->
+          <div class="top-search-form">
+            <form action="#" method="POST">
+              <input class="form-control" style="height: 38px;" type="search" placeholder="Tìm kiếm địa điểm du lịch">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+ 
+      </div>
+      
+      <ul class="nav nav-tabs" style="background: white;">
+        <li class="nav-item active">
+            <a class="nav-link active" href="#tabsNavigationSimple1" data-toggle="tab">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#tabsNavigationSimple2" data-toggle="tab">Văn Hóa</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#tabsNavigationSimple3" data-toggle="tab">Đặc sản - Ẩm thực</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#tabsNavigationSimple4" data-toggle="tab">Khám phá</a>
+        </li>
+    </ul>
+
+    
+
+    <!-- <div id="header-menu"></div>
+    
     <div class="">
         <section class="page-header"> 
             <div class="container">
@@ -32,14 +64,14 @@
                 </div>
             </div>
         </section>
-    </div>
-    <!-- End breadcrum -->
+    </div> -->
+   
 
     <div id="dulich-project-list-data">
-        <div class="block-heading-diemden">Điểm du lịch hấp dẫn</div>
-        <div class="block-diemden">
-            <div class="tindau" v-for="(project, index) in projectsDiemden" v-if="index==0">
-                <div class="hinhanh">
+        <div class="block-diemden" style="background: white;">
+            <div class="tindau" v-for="(project, index) in projectsDiemden" v-if="index==0" style="padding-left: 10px;
+            padding-right: 10px; padding-top: 10px; background: white; margin-bottom: 20px;">
+                <div class="hinhanh" style="border-radius: 0.625rem;">
                     <a :href="'diemden/detail_diemden.html?id=' + project.id">
                         <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                     </a>
@@ -52,12 +84,12 @@
                     {{project.gioithieu}}
                 </div>
             </div>
-            <div class="list-tin" v-for="(project, index) in projectsDiemden.slice(0, 6)" v-if="index>0">
+            <div class="list-tin" v-for="(project, index) in projectsDiemden.slice(0, 6)" v-if="index>0" >
                 <div class="tin">
                     <div class="noidung">
-                        <div class="hinhanh">
+                        <div class="hinhanh" style="border-radius: 0.125rem;"> 
                             <a :href="'diemden/detail_diemden.html?id=' + project.id">
-                                <img :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
+                                <img style="border-radius: 0.425rem;" :src="'https://dulichq6.hcmgis.vn/media/' + project.file" />
                             </a>
                         </div>
                     </div>
@@ -100,8 +132,37 @@
             </div>
         </div>
     </div>
-    <div id="footer-dulich"></div>
+    <div class="footer-nav-area" id="footerNav" style="position: fixed;">
+        <div class="suha-footer-nav h-100">
+          <ul class="h-100 d-flex align-items-center justify-content-between">
+            <li class="active"  ><a href="index.html" style="color: #1273EB;"><img src="www2/img/core-img/trangchu2.png" alt="Home" >Trang Chủ</a></li>
+            <li><a href="diemden.html"><img src="www2/img/core-img/diemden.png" alt="">Điểm Đến</a></li>
+            <li><a href="tintuc.html"><img src="www2/img/core-img/camnang.png" alt="TinTuc">Cẩm Nang</a></li>
+            <!-- <li><a href="pages.html"><img src="www2/img/core-img/map.png" alt="Pages">Bản Đồ</a></li> -->
+            <li><a href="settings.html"><img src="www2/img/core-img/setting.png" alt="Settings">Cài Đặt</a></li>
+          </ul>
+        </div>
+      </div>
+    <!-- <div id="footer-dulich"></div>  -->
 </body>
+
+
+
+<script src="www2/js/jquery.min.js"></script>
+<script src="www2/js/vue.js"></script>
+<script src="www2/js/popper.min.js"></script>
+<script src="www2/js/bootstrap.min.js"></script>
+<script src="www2/js/waypoints.min.js"></script>
+<script src="www2/js/jquery.easing.min.js"></script>
+<script src="www2/js/owl.carousel.min.js"></script>
+<script src="www2/js/jquery.animatedheadline.min.js"></script>
+<script src="www2/js/jquery.counterup.min.js"></script>
+<script src="www2/js/wow.min.js"></script>
+<script src="www2/js/jarallax.min.js"></script>
+<script src="www2/js/jarallax-video.min.js"></script>
+<script src="www2/js/default/jquery.passwordstrength.js"></script>
+<script src="www2/js/default/dark-mode-switch.js"></script>
+<script src="www2/js/default/active.js"></script>
 
 <script>
     $(window).on('load', function() {

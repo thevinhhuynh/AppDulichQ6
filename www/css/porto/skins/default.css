@@ -3442,8 +3442,8 @@ html #header .header-top.header-top-primary .dropdown-menu a:focus {
 }
 
 html #header .header-top.header-top-secondary {
-	background: #0088cc;
-	border-top-color: #0088cc;
+	background: #e36159;
+	border-top-color: #df4c43;
 }
 
 html #header .header-top.header-top-secondary .header-nav-top ul > li.open > a {
