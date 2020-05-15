@@ -4,7 +4,7 @@ APPSTATE.MAP_MARKERS_DIADIEM = [];
 class MapIndex {
     static Init() {
         this.InitMap();
-    }
+    };
 
     static InitMap() {
         MAP = new HTMap('map-dienthoai', [10.7416495,106.6335287], 13);
@@ -19,7 +19,23 @@ class MapIndex {
 
         initCloseMapOver();
         initLayerControl();
-    }
+    };
+
+    static InitData(_vueInstance) {
+        var urlProject = APP.Server.local + '/geojson/';
+        $.ajax({
+            url: urlProject,
+            type: "GET",
+            contentType: "json",
+            success: function (resp) {
+                _vueInstance.projectsListDiemDen = resp;
+            },
+            error: function(xhr, status, errors) {
+                console.log(errors);
+            }
+        });
+        return false;
+    };
 }
 
 function initCloseMapOver() {

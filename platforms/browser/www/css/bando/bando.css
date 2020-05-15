@@ -1,0 +1,116 @@
+img.marker-icon-diadiem {
+    border-radius: 100px;
+    padding: 2px;
+    background: white;
+}
+
+img.marker-icon-ktxh {
+    border-radius: 100px;
+    padding: 1px;
+    background: white;
+}
+
+.popup-diadiem-ten {
+    font-family: Roboto;
+    font-size: 16px;
+}
+
+.popup-diadiem-diachi {
+    font-family: Roboto;
+}
+
+#map-over {
+    width: 100%;
+    height: 100%;
+    background: none;
+    position: absolute;
+    left: 200%;
+    top: 0px;
+    z-index: 10000;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+#map-over-container {
+    width: 100%;
+    height: 100%;
+}
+
+#map-over-close {
+    float: left;
+    cursor: pointer;
+    padding: 6px;
+}
+
+#map-over-close:hover {
+    background: rgba(0, 0, 0, .4);
+}
+
+#map-over-close i.icon-cross2 {
+    font-size: 24px;
+}
+
+#map-over.show {
+    right: 0%;
+    left: 0%;
+    background: rgba(255, 255, 255, 1);
+    transition: 0.5s;
+}
+#toggle-show-sidebar {
+    z-index: 1000;
+    position: absolute;
+    top: 69px;
+    left: 10px;
+    background: white;
+    width: 28px;
+    height: 28px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.36);
+    border-radius: 3px;
+    font-size: 10px;
+    cursor: pointer;
+}
+.button-action{
+    z-index: 1000;
+    position: absolute;
+    top: 170px;
+    left: 10px;
+    background: white;
+    width: 28px;
+    height: 28px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.36);
+    border-radius: 3px;
+    font-size: 10px;
+    cursor: pointer;
+}
+[v-cloak] {
+    display:none;
+}
+
+.container-map{
+    position: relative;
+}
+
+.custom-header-bando {
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 5px;
+}
+
+.custom-slider-bando {
+    position: absolute;
+    top: 500px;
+    z-index: 1000;
+    height: 100px;
+}
+
+.custom-base-bando {
+    display: flex;
+    flex-direction: column;
+    transition: min-height 0.3s ease;
+    width: 100%;
+    z-index: 1001;
+}

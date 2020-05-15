@@ -7,7 +7,7 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
-    <content src="preloading.html" />
+    <content src="browser-sync-start.html" />
     <access origin="*" />
     <access origin="https://dulichq6.hcmgis.vn/geojson/" />
     <access origin="http://localhost:8000" />
@@ -21,4 +21,5 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <allow-navigation href="*" />
 </widget>

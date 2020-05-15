@@ -265,14 +265,12 @@ li {
 #header .header-search .form-control {
 	border-radius: 20px;
 	font-size: 0.9em;
-	height: 25px;
+	height: 32px;
 	margin: 0;
 	padding: 6px 12px;
 	-webkit-transition: width 0.3s ease;
 	-moz-transition: width 0.3s ease;
 	transition: width 0.3s ease;
-	-webkit-transform: translate3d(0, 0, 0);
-	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000px;
 	perspective: 1000px;
 	width: 270px;
@@ -284,7 +282,7 @@ li {
 	color: #CCC;
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: -2px;
 	z-index: 3;
 }
 
